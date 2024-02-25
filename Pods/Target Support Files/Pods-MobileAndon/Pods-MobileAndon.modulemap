@@ -1,0 +1,6 @@
+framework module Pods_MobileAndon {
+  umbrella header "Pods-MobileAndon-umbrella.h"
+
+  export *
+  module * { export * }
+}
