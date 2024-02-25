@@ -24,6 +24,10 @@
 		5656CF062B8B568E003E0A57 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 5656CF052B8B568E003E0A57 /* FirebaseFirestore */; };
 		5656CF082B8B568E003E0A57 /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 5656CF072B8B568E003E0A57 /* FirebaseFirestoreSwift */; };
 		5656CF0A2B8B56C8003E0A57 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5656CF092B8B56C8003E0A57 /* AuthService.swift */; };
+		5656CF0F2B8B6036003E0A57 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5656CF0E2B8B6036003E0A57 /* MainView.swift */; };
+		5656CF122B8B60EC003E0A57 /* TicketHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5656CF112B8B60EC003E0A57 /* TicketHistory.swift */; };
+		5656CF1A2B8B6138003E0A57 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5656CF192B8B6138003E0A57 /* ProfileView.swift */; };
+		5656CF1E2B8B616C003E0A57 /* ChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5656CF1D2B8B616C003E0A57 /* ChatView.swift */; };
 		678056FAB7391FE274E8FA78 /* Pods_MobileAndon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC426CB8D571CD07F868A5D4 /* Pods_MobileAndon.framework */; };
 /* End PBXBuildFile section */
 
@@ -38,6 +42,10 @@
 		5656CEEF2B8B4E96003E0A57 /* MainTabbarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabbarView.swift; sourceTree = "<group>"; };
 		5656CEF42B8B5006003E0A57 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		5656CF092B8B56C8003E0A57 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
+		5656CF0E2B8B6036003E0A57 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		5656CF112B8B60EC003E0A57 /* TicketHistory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketHistory.swift; sourceTree = "<group>"; };
+		5656CF192B8B6138003E0A57 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		5656CF1D2B8B616C003E0A57 /* ChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatView.swift; sourceTree = "<group>"; };
 		D4E59394F831884DB65B58A3 /* Pods-MobileAndon.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MobileAndon.release.xcconfig"; path = "Target Support Files/Pods-MobileAndon/Pods-MobileAndon.release.xcconfig"; sourceTree = "<group>"; };
 		FC426CB8D571CD07F868A5D4 /* Pods_MobileAndon.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MobileAndon.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -116,6 +124,10 @@
 		5656CEDF2B8B4D30003E0A57 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				5656CF162B8B6125003E0A57 /* Profile */,
+				5656CF152B8B611F003E0A57 /* Chat */,
+				5656CF102B8B60DB003E0A57 /* TicketHistory */,
+				5656CF0B2B8B5F6C003E0A57 /* Home */,
 				5656CEF12B8B4EDD003E0A57 /* Components */,
 				5656CEE62B8B4DAE003E0A57 /* Authentication */,
 				5656CEE52B8B4DA9003E0A57 /* Root */,
@@ -212,6 +224,102 @@
 		5656CEF32B8B4EF0003E0A57 /* View */ = {
 			isa = PBXGroup;
 			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		5656CF0B2B8B5F6C003E0A57 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				5656CF0D2B8B5F9F003E0A57 /* View */,
+				5656CF0C2B8B5F99003E0A57 /* ViewModel */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		5656CF0C2B8B5F99003E0A57 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		5656CF0D2B8B5F9F003E0A57 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				5656CF0E2B8B6036003E0A57 /* MainView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		5656CF102B8B60DB003E0A57 /* TicketHistory */ = {
+			isa = PBXGroup;
+			children = (
+				5656CF132B8B60FD003E0A57 /* View */,
+				5656CF142B8B6108003E0A57 /* ViewModel */,
+			);
+			path = TicketHistory;
+			sourceTree = "<group>";
+		};
+		5656CF132B8B60FD003E0A57 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				5656CF112B8B60EC003E0A57 /* TicketHistory.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		5656CF142B8B6108003E0A57 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		5656CF152B8B611F003E0A57 /* Chat */ = {
+			isa = PBXGroup;
+			children = (
+				5656CF1C2B8B6167003E0A57 /* View */,
+				5656CF1B2B8B6146003E0A57 /* ViewModel */,
+			);
+			path = Chat;
+			sourceTree = "<group>";
+		};
+		5656CF162B8B6125003E0A57 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				5656CF182B8B6132003E0A57 /* View */,
+				5656CF172B8B612D003E0A57 /* ViewModel */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		5656CF172B8B612D003E0A57 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		5656CF182B8B6132003E0A57 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				5656CF192B8B6138003E0A57 /* ProfileView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		5656CF1B2B8B6146003E0A57 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		5656CF1C2B8B6167003E0A57 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				5656CF1D2B8B616C003E0A57 /* ChatView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -362,7 +470,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5656CF1A2B8B6138003E0A57 /* ProfileView.swift in Sources */,
 				5656CED32B8B4D14003E0A57 /* ContentView.swift in Sources */,
+				5656CF122B8B60EC003E0A57 /* TicketHistory.swift in Sources */,
+				5656CF0F2B8B6036003E0A57 /* MainView.swift in Sources */,
+				5656CF1E2B8B616C003E0A57 /* ChatView.swift in Sources */,
 				5656CED12B8B4D14003E0A57 /* MobileAndonApp.swift in Sources */,
 				5656CF0A2B8B56C8003E0A57 /* AuthService.swift in Sources */,
 				5656CEEE2B8B4E6F003E0A57 /* ContentViewModel.swift in Sources */,
