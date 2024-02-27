@@ -13,9 +13,9 @@ struct ContentView: View {
     var body: some View {
         Group {
             if viewModel.userSession == nil {
-                Text("User session is nil")
+                LoginView()
             } else {
-                Text("User session is not nil")
+                MainTabbarView()
             }
         }
     }
@@ -23,5 +23,5 @@ struct ContentView: View {
 
 #Preview {
     ContentView()
-        .environmentObject(ContentViewModel())
+//        .environmentObject(ContentViewModel())
 }
