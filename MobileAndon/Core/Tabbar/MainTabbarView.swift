@@ -12,7 +12,7 @@ struct MainTabbarView: View {
     
     var body: some View {
         TabView(selection: $selectedTab) {
-            MainView()
+            HomeView()
                 .navigationTitle("Profile")
                 .tabItem {
                     Label("Home", systemImage: selectedTab == 0 ? "house.fill" : "house")
