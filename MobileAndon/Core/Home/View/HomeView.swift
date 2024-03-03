@@ -10,6 +10,8 @@ import SwiftUI
 struct HomeView: View {
     @StateObject var viewModel = HomeViewModel()
     
+    @State var presentAddNewTicket = false
+    
     var body: some View {
         NavigationStack {
             ZStack {
@@ -52,9 +54,37 @@ struct HomeView: View {
                    Spacer()
                 }
                 .padding(.vertical)
+                
+                // floating action button
+                VStack {
+                    Spacer()
+                    HStack {
+                        Spacer()
+                        Button {
+                            // add new ticket
+                            self.presentAddNewTicket.toggle()
+                            print("Add new ticket..")
+                        } label: {
+                            Image(systemName: "plus")
+                                .padding()
+                                .background(Color.blue)
+                                .foregroundColor(.white)
+                                .clipShape(Circle())
+                                .padding()
+                        }
+
+                    }
+                }
             }
             .navigationDestination(for: Ticket.self) { ticket in
                 TicketDetailView(ticket: ticket)
+            }
+            .sheet(isPresented: $presentAddNewTicket) {
+                NavigationStack {
+                    AddTicketView(homeViewModel: viewModel)
+                        .navigationTitle("Add new ticket")
+                        .navigationBarTitleDisplayMode(.inline)
+                }
             }
         }
     }

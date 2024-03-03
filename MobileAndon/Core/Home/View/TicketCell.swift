@@ -37,7 +37,7 @@ struct TicketCell: View {
                 
                 Spacer()
                 
-                VStack {
+                VStack(alignment: .trailing) {
                     Text("11.06")
                         .font(.footnote)
                         .foregroundColor(.secondary)
@@ -65,7 +65,7 @@ struct TicketCell: View {
 #Preview {
     Color(uiColor: .systemGray6)
         .overlay {
-            TicketCell(ticket: Ticket(machineType: .tester, machineName: "Red Led Tester", problem: "Pneumatic preasure is low", ticketStatus: .open, createdBy: "Ricky", createdAt: Timestamp()))
+            TicketCell(ticket: Ticket(machineType: .tester, machineName: "Red Led Tester", problem: "Pneumatic preasure is low", ticketStatus: .open, createdByUserId: "Ricky", createdAt: Timestamp()))
         }
         .ignoresSafeArea(.all)
 }

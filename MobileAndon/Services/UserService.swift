@@ -11,11 +11,24 @@ import FirebaseFirestoreSwift
 
 
 class UserService {
+    @Published var currentUser: User?
     static let shared = UserService()
     
-    @Published var currentUser: User?
-    
     init() {
+        Task {
+            try await fetchCurrentUser()
+        }
+    }
+    
+    // fetch the current user that have the session
+    @MainActor
+    private func fetchCurrentUser() async throws {
+        guard let uid = Auth.auth().currentUser?.uid else { return }
         
+        let snapshot = try await Firestore.firestore().collection("user").document(uid).getDocument()
+        let user = try snapshot.data(as: User.self)
+        self.currentUser = user
+        
+        print("DEBUG: Current user log in is: \(currentUser!)")
     }
 }

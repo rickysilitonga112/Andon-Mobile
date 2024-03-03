@@ -41,7 +41,12 @@
 		5656CF442B8DF3C8003E0A57 /* TicketStatisticContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5656CF432B8DF3C8003E0A57 /* TicketStatisticContainer.swift */; };
 		5656CF462B8DF981003E0A57 /* Ticket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5656CF452B8DF981003E0A57 /* Ticket.swift */; };
 		5656CF482B8DFE20003E0A57 /* TicketCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5656CF472B8DFE20003E0A57 /* TicketCell.swift */; };
+		56ABC6DE2B9063A2006F99F2 /* TicketDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56ABC6DD2B9063A2006F99F2 /* TicketDetailCell.swift */; };
+		56AEE08B2B91DA9C00467886 /* AMSecondaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56AEE08A2B91DA9C00467886 /* AMSecondaryButton.swift */; };
+		56DA75E02B945899004FB947 /* TicketDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56DA75DF2B945899004FB947 /* TicketDetailViewModel.swift */; };
 		56E5094E2B8F244F00845095 /* TicketDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56E5094D2B8F244F00845095 /* TicketDetailView.swift */; };
+		56E509532B8F3F6700845095 /* AddTicketView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56E509522B8F3F6700845095 /* AddTicketView.swift */; };
+		56E509552B8F3F7000845095 /* AddTicketViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56E509542B8F3F7000845095 /* AddTicketViewModel.swift */; };
 		678056FAB7391FE274E8FA78 /* Pods_MobileAndon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC426CB8D571CD07F868A5D4 /* Pods_MobileAndon.framework */; };
 /* End PBXBuildFile section */
 
@@ -73,7 +78,12 @@
 		5656CF432B8DF3C8003E0A57 /* TicketStatisticContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketStatisticContainer.swift; sourceTree = "<group>"; };
 		5656CF452B8DF981003E0A57 /* Ticket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ticket.swift; sourceTree = "<group>"; };
 		5656CF472B8DFE20003E0A57 /* TicketCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketCell.swift; sourceTree = "<group>"; };
+		56ABC6DD2B9063A2006F99F2 /* TicketDetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketDetailCell.swift; sourceTree = "<group>"; };
+		56AEE08A2B91DA9C00467886 /* AMSecondaryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AMSecondaryButton.swift; sourceTree = "<group>"; };
+		56DA75DF2B945899004FB947 /* TicketDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketDetailViewModel.swift; sourceTree = "<group>"; };
 		56E5094D2B8F244F00845095 /* TicketDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketDetailView.swift; sourceTree = "<group>"; };
+		56E509522B8F3F6700845095 /* AddTicketView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTicketView.swift; sourceTree = "<group>"; };
+		56E509542B8F3F7000845095 /* AddTicketViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTicketViewModel.swift; sourceTree = "<group>"; };
 		D4E59394F831884DB65B58A3 /* Pods-MobileAndon.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MobileAndon.release.xcconfig"; path = "Target Support Files/Pods-MobileAndon/Pods-MobileAndon.release.xcconfig"; sourceTree = "<group>"; };
 		FC426CB8D571CD07F868A5D4 /* Pods_MobileAndon.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MobileAndon.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -152,6 +162,7 @@
 		5656CEDF2B8B4D30003E0A57 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				56E5094F2B8F3F3700845095 /* AddNewTicket */,
 				56E5094A2B8F242700845095 /* TicketDetail */,
 				5656CEE62B8B4DAE003E0A57 /* Authentication */,
 				5656CEF12B8B4EDD003E0A57 /* Components */,
@@ -244,6 +255,7 @@
 			children = (
 				5656CF352B8C8F67003E0A57 /* AMTextField.swift */,
 				5656CF392B8C946E003E0A57 /* AMPrimaryButton.swift */,
+				56AEE08A2B91DA9C00467886 /* AMSecondaryButton.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -366,6 +378,14 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		56ABC6DF2B9064C6006F99F2 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				56ABC6DD2B9063A2006F99F2 /* TicketDetailCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 		56E5094A2B8F242700845095 /* TicketDetail */ = {
 			isa = PBXGroup;
 			children = (
@@ -378,6 +398,7 @@
 		56E5094B2B8F243800845095 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				56ABC6DF2B9064C6006F99F2 /* Cell */,
 				56E5094D2B8F244F00845095 /* TicketDetailView.swift */,
 			);
 			path = View;
@@ -386,6 +407,32 @@
 		56E5094C2B8F243E00845095 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				56DA75DF2B945899004FB947 /* TicketDetailViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		56E5094F2B8F3F3700845095 /* AddNewTicket */ = {
+			isa = PBXGroup;
+			children = (
+				56E509502B8F3F4900845095 /* View */,
+				56E509512B8F3F4E00845095 /* ViewModel */,
+			);
+			path = AddNewTicket;
+			sourceTree = "<group>";
+		};
+		56E509502B8F3F4900845095 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				56E509522B8F3F6700845095 /* AddTicketView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		56E509512B8F3F4E00845095 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				56E509542B8F3F7000845095 /* AddTicketViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -537,6 +584,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5656CF422B8DF31D003E0A57 /* HomeViewModel.swift in Sources */,
+				56DA75E02B945899004FB947 /* TicketDetailViewModel.swift in Sources */,
 				5656CF1A2B8B6138003E0A57 /* ProfileView.swift in Sources */,
 				5656CF362B8C8F67003E0A57 /* AMTextField.swift in Sources */,
 				5656CED32B8B4D14003E0A57 /* ContentView.swift in Sources */,
@@ -546,10 +594,14 @@
 				5656CF0F2B8B6036003E0A57 /* HomeView.swift in Sources */,
 				5656CF1E2B8B616C003E0A57 /* ChatView.swift in Sources */,
 				5656CED12B8B4D14003E0A57 /* MobileAndonApp.swift in Sources */,
+				56E509552B8F3F7000845095 /* AddTicketViewModel.swift in Sources */,
+				56AEE08B2B91DA9C00467886 /* AMSecondaryButton.swift in Sources */,
 				5656CF442B8DF3C8003E0A57 /* TicketStatisticContainer.swift in Sources */,
 				5656CF0A2B8B56C8003E0A57 /* AuthService.swift in Sources */,
 				5656CF382B8C930C003E0A57 /* LoginViewModel.swift in Sources */,
 				5656CF3C2B8C9C50003E0A57 /* RegisterViewModel.swift in Sources */,
+				56E509532B8F3F6700845095 /* AddTicketView.swift in Sources */,
+				56ABC6DE2B9063A2006F99F2 /* TicketDetailCell.swift in Sources */,
 				5656CEEE2B8B4E6F003E0A57 /* ContentViewModel.swift in Sources */,
 				5656CF2C2B8BC0EB003E0A57 /* AuthHeaderView.swift in Sources */,
 				5656CF462B8DF981003E0A57 /* Ticket.swift in Sources */,

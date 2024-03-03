@@ -16,12 +16,12 @@ struct Ticket: Identifiable, Hashable, Codable {
     let machineName: String
     let problem: String
     var ticketStatus: TicketStatus
-    let createdBy: String
+    let createdByUserId: String
     let createdAt: Timestamp
     var closedAt: Timestamp?
-    var respondBy: String?
+    var respondByUserId: String?
     var actions: String?
-    var closeBy: String?
+    var closedBy: String?
     
     var id: String {
         return ticketId ?? NSUUID().uuidString
@@ -54,7 +54,7 @@ enum TicketStatus: Codable {
 }
 
 enum MachineType: Codable {
-    case automation, tester, tooling
+    case automation, tester, tooling, other
     
     var title: String {
         switch self {
@@ -64,6 +64,8 @@ enum MachineType: Codable {
             return "End Tester"
         case .tooling:
             return "Production Tooling"
+        case .other:
+            return "Other"
         }
     }
 }
