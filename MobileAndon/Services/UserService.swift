@@ -31,4 +31,14 @@ class UserService {
         
         print("DEBUG: Current user log in is: \(currentUser!)")
     }
+    
+    @MainActor
+    static public func fetchUserName(with uid: String) async throws -> String? {
+        guard let userData = try await Firestore.firestore().collection("user").document(uid).getDocument().data() else {
+            return nil
+        }
+        return userData["userName"] as? String
+    }
+    
+    
 }

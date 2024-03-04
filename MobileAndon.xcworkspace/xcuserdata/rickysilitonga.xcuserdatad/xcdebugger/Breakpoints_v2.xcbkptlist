@@ -127,5 +127,158 @@
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "98512972-7C80-4D43-A5DA-DE9D23D0B3D3"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MobileAndon/Core/Home/ViewModel/HomeViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "13"
+            endingLineNumber = "13"
+            landmarkName = "tickets"
+            landmarkType = "24">
+            <Locations>
+               <Location
+                  uuid = "98512972-7C80-4D43-A5DA-DE9D23D0B3D3 - 767df0fbd4c42ac4"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "property wrapper backing initializer of MobileAndon.HomeViewModel.tickets : Swift.Array&lt;MobileAndon.Ticket&gt;"
+                  moduleName = "MobileAndon"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/rickysilitonga/Documents/Development/iOS-development/big-project/MobileAndon/MobileAndon/Core/Home/ViewModel/HomeViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "24">
+               </Location>
+               <Location
+                  uuid = "98512972-7C80-4D43-A5DA-DE9D23D0B3D3 - d866b25bb9a375d9"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MobileAndon.HomeViewModel.tickets.getter : Swift.Array&lt;MobileAndon.Ticket&gt;"
+                  moduleName = "MobileAndon"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/rickysilitonga/Documents/Development/iOS-development/big-project/MobileAndon/MobileAndon/Core/Home/ViewModel/HomeViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "28">
+               </Location>
+               <Location
+                  uuid = "98512972-7C80-4D43-A5DA-DE9D23D0B3D3 - 4ee6bf643bbd4e4a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MobileAndon.HomeViewModel.tickets.setter : Swift.Array&lt;MobileAndon.Ticket&gt;"
+                  moduleName = "MobileAndon"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/rickysilitonga/Documents/Development/iOS-development/big-project/MobileAndon/MobileAndon/Core/Home/ViewModel/HomeViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
+                  offsetFromSymbolStart = "0">
+               </Location>
+               <Location
+                  uuid = "98512972-7C80-4D43-A5DA-DE9D23D0B3D3 - 140404aee0d4fb35"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MobileAndon.HomeViewModel.tickets.modify : Swift.Array&lt;MobileAndon.Ticket&gt;"
+                  moduleName = "MobileAndon"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/rickysilitonga/Documents/Development/iOS-development/big-project/MobileAndon/MobileAndon/Core/Home/ViewModel/HomeViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
+                  offsetFromSymbolStart = "0">
+               </Location>
+               <Location
+                  uuid = "98512972-7C80-4D43-A5DA-DE9D23D0B3D3 - 4456bf94ed87c488"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MobileAndon.HomeViewModel.tickets.modify : Swift.Array&lt;MobileAndon.Ticket&gt; with unmangled suffix &quot;.resume.0&quot;"
+                  moduleName = "MobileAndon"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/rickysilitonga/Documents/Development/iOS-development/big-project/MobileAndon/%3Ccompiler-generated%3E"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "20">
+               </Location>
+               <Location
+                  uuid = "98512972-7C80-4D43-A5DA-DE9D23D0B3D3 - eebf08b2fa69c551"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MobileAndon.HomeViewModel.$tickets.getter : Combine.Published&lt;Swift.Array&lt;MobileAndon.Ticket&gt;&gt;.Publisher"
+                  moduleName = "MobileAndon"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/rickysilitonga/Documents/Development/iOS-development/big-project/MobileAndon/MobileAndon/Core/Home/ViewModel/HomeViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
+                  offsetFromSymbolStart = "0">
+               </Location>
+               <Location
+                  uuid = "98512972-7C80-4D43-A5DA-DE9D23D0B3D3 - f55253a30ef2c130"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MobileAndon.HomeViewModel.$tickets.setter : Combine.Published&lt;Swift.Array&lt;MobileAndon.Ticket&gt;&gt;.Publisher"
+                  moduleName = "MobileAndon"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/rickysilitonga/Documents/Development/iOS-development/big-project/MobileAndon/%3Ccompiler-generated%3E"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "36">
+               </Location>
+               <Location
+                  uuid = "98512972-7C80-4D43-A5DA-DE9D23D0B3D3 - b48e7e28fcb8a3f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MobileAndon.HomeViewModel.$tickets.modify : Combine.Published&lt;Swift.Array&lt;MobileAndon.Ticket&gt;&gt;.Publisher"
+                  moduleName = "MobileAndon"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/rickysilitonga/Documents/Development/iOS-development/big-project/MobileAndon/%3Ccompiler-generated%3E"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "64">
+               </Location>
+               <Location
+                  uuid = "98512972-7C80-4D43-A5DA-DE9D23D0B3D3 - 5cd2065c6c47a5fb"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MobileAndon.HomeViewModel.$tickets.modify : Combine.Published&lt;Swift.Array&lt;MobileAndon.Ticket&gt;&gt;.Publisher with unmangled suffix &quot;.resume.0&quot;"
+                  moduleName = "MobileAndon"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/rickysilitonga/Documents/Development/iOS-development/big-project/MobileAndon/%3Ccompiler-generated%3E"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "24">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>

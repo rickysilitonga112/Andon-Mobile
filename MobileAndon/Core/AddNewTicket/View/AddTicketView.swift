@@ -73,10 +73,9 @@ struct AddTicketView: View {
             // if pressed, add the new ticket the database
             ToolbarItem(placement: .navigationBarTrailing) {
                 Button {
-                    Task {
-//                        try await viewModel.uploadThread(caption: caption)
-                        presentationMode.wrappedValue.dismiss()
-                    }
+                    // upload new ticket to firestore
+                    self.viewModel.uploadTicket()
+                    presentationMode.wrappedValue.dismiss()
                 } label: {
                     Text("Add")
                         .font(.subheadline)

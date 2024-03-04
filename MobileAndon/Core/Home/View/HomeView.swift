@@ -9,7 +9,6 @@ import SwiftUI
 
 struct HomeView: View {
     @StateObject var viewModel = HomeViewModel()
-    
     @State var presentAddNewTicket = false
     
     var body: some View {
@@ -25,7 +24,7 @@ struct HomeView: View {
                         .fontWeight(.bold)
                         .padding(.horizontal)
                     
-                    TicketStatisticContainer(open: 2, ongoing: 3, closed: 100)
+                    TicketStatisticContainer(open: 0, ongoing: 0, closed: 0)
                         .padding(.horizontal)
                         .padding(.top, 12)
                     
@@ -36,26 +35,29 @@ struct HomeView: View {
                         .fontWeight(.bold)
                         .padding(.horizontal)
                         .padding(.top, 24)
-                        // active tickets
                     
-                    ScrollView {
-                        LazyVStack(alignment: .leading, spacing: 12) {
-                            ForEach(viewModel.tickets, id: \.self) { ticket in
-                                NavigationLink(value: ticket) {
-                                    TicketCell(ticket: ticket)
+                    if !(viewModel.tickets.isEmpty) {
+                        ScrollView {
+                            LazyVStack(alignment: .leading, spacing: 12) {
+                                ForEach(viewModel.tickets, id: \.self) { ticket in
+                                    NavigationLink(value: ticket) {
+                                        TicketCell(ticket: ticket)
+                                    }
                                 }
                             }
                         }
-                        
+                        .scrollIndicators(.hidden)
+                        .padding(.top, 12)
+                        .padding(.horizontal)
+                    } else {
+                        // TODO: - Handle empty tickets
+                        Text("Ticket is nil")
                     }
-                    .padding(.top, 12)
-                    .padding(.horizontal)
                    
                    Spacer()
                 }
-                .padding(.vertical)
+                .padding(.top)
                 
-                // floating action button
                 VStack {
                     Spacer()
                     HStack {
@@ -74,6 +76,11 @@ struct HomeView: View {
                         }
 
                     }
+                }
+            }
+            .onAppear {
+                Task {
+                    try await TicketService.fetchTicket()
                 }
             }
             .navigationDestination(for: Ticket.self) { ticket in

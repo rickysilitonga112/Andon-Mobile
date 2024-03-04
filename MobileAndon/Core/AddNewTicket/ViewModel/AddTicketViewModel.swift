@@ -5,8 +5,7 @@
 //  Created by Ricky Silitonga on 28/02/24.
 //
 
-import Foundation
-import FirebaseFirestore
+import Firebase
 
 class AddTicketViewModel: ObservableObject {
     @Published var machinetype: MachineType = .other
@@ -23,5 +22,21 @@ class AddTicketViewModel: ObservableObject {
                       createdByUserId: user.id,
                       createdAt: Timestamp()
         )
+    }
+    
+    func uploadTicket() {
+        // get the user uid
+        guard let uid = Auth.auth().currentUser?.uid else { return }
+        
+        let ticket = Ticket(
+            machineType: self.machinetype,
+            machineName: self.machineName,
+            problem: self.problem,
+            ticketStatus: .open,
+            createdByUserId: uid,
+            createdAt: Timestamp()
+        )
+        
+        TicketService.uploadTicket(ticket)
     }
 }
