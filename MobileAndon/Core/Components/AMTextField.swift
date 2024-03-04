@@ -11,9 +11,9 @@ struct AMTextField: View {
     // properties
     @Binding var text: String
     let placeholder: String
-    let isSecure: Bool
+    var isSecure: Bool = false
     
-    @State var showPassword = false
+    @State private var showPassword = false
     
     var body: some View {
         ZStack {

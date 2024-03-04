@@ -53,7 +53,7 @@ enum TicketStatus: Codable {
     }
 }
 
-enum MachineType: Codable {
+enum MachineType: CaseIterable, Codable {
     case automation, tester, tooling, other
     
     var title: String {
