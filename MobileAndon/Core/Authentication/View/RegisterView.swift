@@ -13,6 +13,7 @@ struct RegisterView: View {
     
     @State private var confirmPassword = ""
     @State private var isValidEmail = false
+    @State private var isValidPhoneNumber = false
     @State private var isValidPassword = false
     @State private var isValidConfirmPassword = false
     
@@ -36,11 +37,18 @@ struct RegisterView: View {
                         .keyboardType(.emailAddress)
                         .textInputAutocapitalization(.never)
                         .onChange(of: viewModel.email) {
-                            self.isValidEmail = viewModel.isValidEmail()
+                            self.isValidEmail = viewModel.validateEmail()
                         }
                     
                     AMTextField(text: $viewModel.fullName, placeholder: "Full Name", isSecure: false)
                         .textInputAutocapitalization(.none)
+                    
+                    AMTextField(text: $viewModel.phoneNumber, placeholder: "Phone Number", isSecure: false)
+                        .textInputAutocapitalization(.none)
+                        .onChange(of: viewModel.phoneNumber) {
+                            self.isValidPhoneNumber = viewModel.validatePhoneNumber()
+                            print("Is valid phone number: \(self.isValidPhoneNumber)")
+                        }
                        
                     AMTextField(text: $viewModel.password, placeholder: "Password", isSecure: true)
                         .onChange(of: viewModel.password) {
@@ -58,7 +66,7 @@ struct RegisterView: View {
                 }
                 .padding(.top, 20)
                 
-                AMPrimaryButton(title: "Register", color: (isValidEmail && isValidPassword && isValidConfirmPassword) ? .blue : .gray) {
+                AMPrimaryButton(title: "Register", color: (isValidEmail && isValidPassword && isValidConfirmPassword && isValidPhoneNumber) ? .blue : .gray) {
                     guard viewModel.password.count >= 6 else  {
                         print("DEBUG: Password is to short")
                         return
@@ -67,6 +75,7 @@ struct RegisterView: View {
                         print("DEBUG: Password doesn't match")
                         return
                     }
+                    
                     // handle register
                     Task {
                         try await viewModel.register()

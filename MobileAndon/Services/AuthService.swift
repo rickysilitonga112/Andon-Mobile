@@ -41,11 +41,13 @@ class AuthService {
     ///   - fullName: full name to register
     ///   - password: password to register
     @MainActor
-    func signUp(with email: String, fullName: String, password: String) async throws {
+    func signUp(with email: String, fullName: String, phoneNumber: String, password: String) async throws {
         do {
             let result = try await Auth.auth().createUser(withEmail: email, password: password)
+            let user = User(id: result.user.uid, email: email, fullName: fullName, phoneNumber: phoneNumber)
             self.userSession = result.user
-            try await uploadUserData(id: result.user.uid, email: email, fullName: fullName)
+            
+            try await uploadUserData(user)
         } catch {
             print("DEBUG: Failed to create user with error: \(error.localizedDescription)")
         }
@@ -73,10 +75,9 @@ class AuthService {
     ///   - id: registered account id
     ///   - email: registered account email
     ///   - fullName: registered account full name
-    private func uploadUserData(id: String, email: String, fullName: String) async throws {
-        let user = User(id: id, email: email, fullName: fullName)
+    private func uploadUserData(_ user: User) async throws {
         if let userData = try? Firestore.Encoder().encode(user) {
-            try await Firestore.firestore().collection("users").document(id).setData(userData)
+            try await Firestore.firestore().collection("users").document(user.id).setData(userData)
             UserService.shared.currentUser = user
         }
     }

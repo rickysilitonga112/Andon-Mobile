@@ -11,6 +11,7 @@ struct User: Identifiable, Codable, Hashable {
     let id: String
     let email: String
     let fullName: String
+    let phoneNumber: String
     var profileImageUrl: String?
     var role: Role = .none
 }
