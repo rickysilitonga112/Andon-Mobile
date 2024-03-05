@@ -12,7 +12,7 @@ struct User: Identifiable, Codable, Hashable {
     let email: String
     let fullName: String
     var profileImageUrl: String?
-    var role: Role?
+    var role: Role = .none
 }
 
 enum Role: String, Codable {

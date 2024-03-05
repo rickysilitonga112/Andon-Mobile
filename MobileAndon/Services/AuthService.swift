@@ -51,8 +51,8 @@ class AuthService {
         }
     }
     
-    @MainActor
-    func signOut() async {
+    /// Function that handle sign out in firebase authentication
+    func signOut() {
         do {
             try Auth.auth().signOut()
         } catch {
