@@ -12,28 +12,6 @@ struct AddTicketView: View {
     @ObservedObject var homeViewModel: HomeViewModel
     @StateObject var viewModel = AddTicketViewModel()
     
-//    @DocumentID var ticketId: String?
-//    let machineType: MachineType
-//    let machineName: String
-//    let problem: String
-//    var ticketStatus: TicketStatus
-//    let createdByUserId: String
-//    let createdAt: Timestamp
-//    var closedAt: Timestamp?
-//    var respondByUserId: String?
-//    var actions: String?
-//    var closedBy: String?
-//    
-//    var id: String {
-//        return ticketId ?? NSUUID().uuidString
-//    }
-    
-    // should take from user
-    // 1. machine type
-    // 2. machine name
-    // 3. problem
-    // 4.
-    
     private var user: User? {
         return UserService.shared.currentUser
     }
