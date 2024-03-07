@@ -11,7 +11,7 @@ import FirebaseFirestoreSwift
 
 struct TicketService {
     
-    static public func fetchTicket() async throws -> [Ticket] {
+    static func fetchTickets() async throws -> [Ticket] {
         let snapshots = try await Firestore.firestore().collection("tickets").getDocuments()
         let tickets = snapshots.documents.compactMap { ticket in
             try? ticket.data(as: Ticket.self)
@@ -19,7 +19,17 @@ struct TicketService {
         return tickets
     }
     
-    static public func uploadTicket(_ ticket: Ticket) {
+    static func fetchTicket(with ticketId: String) async throws -> Ticket? {
+        do {
+            return try await Firestore.firestore().collection("tickets").document(ticketId).getDocument(as: Ticket.self)
+        } catch {
+            print("Error to fetch ticket with error: \(error)")
+            return nil
+        }
+        
+    }
+    
+    static func uploadTicket(_ ticket: Ticket) {
         // encode the ticket
         guard let ticketData = try? Firestore.Encoder().encode(ticket) else { return }
         
@@ -35,4 +45,7 @@ struct TicketService {
             }
     }
     
+    static func updateData(ticketId: String, _ fields: [AnyHashable : Any]) async throws {
+        try await Firestore.firestore().collection("tickets").document(ticketId).updateData(fields)
+    }
 }

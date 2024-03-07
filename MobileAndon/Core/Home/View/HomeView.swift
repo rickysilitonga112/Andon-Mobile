@@ -80,11 +80,11 @@ struct HomeView: View {
             }
             .onAppear {
                 Task {
-                    try await TicketService.fetchTicket()
+                    try await TicketService.fetchTickets()
                 }
             }
             .navigationDestination(for: Ticket.self) { ticket in
-                TicketDetailView(ticket: ticket)
+                TicketDetailView(ticketId: ticket.id)
             }
             .sheet(isPresented: $presentAddNewTicket) {
                 NavigationStack {
