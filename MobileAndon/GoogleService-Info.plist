@@ -3,17 +3,17 @@
 <plist version="1.0">
 <dict>
 	<key>API_KEY</key>
-	<string>AIzaSyAmicSq24s2DvDm9XnXKt-eywTzIzkK-A4</string>
+	<string>AIzaSyATkuDGMHi8W3E1EkYcpO-eAxKnRz896NU</string>
 	<key>GCM_SENDER_ID</key>
-	<string>886223588595</string>
+	<string>557956299812</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
 	<string>com.rsilitonga112.MobileAndon</string>
 	<key>PROJECT_ID</key>
-	<string>mobileandon-4c524</string>
+	<string>mobile-andon</string>
 	<key>STORAGE_BUCKET</key>
-	<string>mobileandon-4c524.appspot.com</string>
+	<string>mobile-andon.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
 	<false></false>
 	<key>IS_ANALYTICS_ENABLED</key>
@@ -25,6 +25,6 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:886223588595:ios:effdbe4da31a6548cd7b86</string>
+	<string>1:557956299812:ios:a7426835e52cb9ad4eecb1</string>
 </dict>
 </plist>
