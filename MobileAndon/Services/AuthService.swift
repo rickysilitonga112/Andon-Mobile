@@ -9,11 +9,12 @@ import Firebase
 import FirebaseAuth
 import FirebaseFirestoreSwift
 
+@MainActor
 class AuthService {
     static let shared = AuthService()
     
     @Published var userSession: FirebaseAuth.User?
-    
+    let auth = Auth.auth()
     init() {
         self.userSession = Auth.auth().currentUser
         if let userSession = self.userSession {
@@ -21,18 +22,13 @@ class AuthService {
         }
     }
     
-    /// Auth service function to handle sign in
+    /// Handle sign in with email and password
     /// - Parameters:
     ///   - email: email that used for login
     ///   - password: password that use for login
-    @MainActor
     func signIn(with email: String, password: String) async throws {
-        do {
-            let result = try await Auth.auth().signIn(withEmail: email, password: password)
-            self.userSession = result.user
-        } catch {
-            print("DEBUG: Failed to sign in the user with error: \(error.localizedDescription)")
-        }
+        let result = try await auth.signIn(withEmail: email, password: password)
+        self.userSession = result.user
     }
     
     /// Auth service function to handle sign up
@@ -40,7 +36,6 @@ class AuthService {
     ///   - email: email to register
     ///   - fullName: full name to register
     ///   - password: password to register
-    @MainActor
     func signUp(with email: String, fullName: String, phoneNumber: String, password: String) async throws {
         do {
             let result = try await Auth.auth().createUser(withEmail: email, password: password)
@@ -54,14 +49,8 @@ class AuthService {
     }
     
     /// Function that handle sign out in firebase authentication
-    func signOut() {
-        do {
-            try Auth.auth().signOut()
-        } catch {
-            print("DEBUG: Unable to sign out with error: \(error.localizedDescription)")
-            return
-        }
-        
+    func signOut() throws {
+        try auth.signOut()
         // set user session locally to nil
         self.userSession = nil
         
@@ -69,7 +58,6 @@ class AuthService {
         UserService.shared.currentUser = nil
     }
     
-    @MainActor
     /// Upload registered user data to the firebase firestore
     /// - Parameters:
     ///   - id: registered account id

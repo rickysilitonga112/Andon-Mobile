@@ -9,35 +9,34 @@ import Foundation
 import Firebase
 import FirebaseFirestoreSwift
 
+@MainActor
 struct TicketService {
+    static let shared = TicketService()
+    private let ticketCollection = Firestore.firestore().collection("tickets")
     
-    static func fetchTickets() async throws -> [Ticket] {
-        let snapshots = try await Firestore.firestore().collection("tickets").getDocuments()
-        let tickets = snapshots.documents.compactMap { ticket in
+    // MARK: - Document Refference
+    private func ticketDocument(ticketId: String) -> DocumentReference {
+        ticketCollection.document(ticketId)
+    }
+    
+    // MARK: Services
+    func fetchTickets() async throws -> [Ticket] {
+        try await ticketCollection.getDocuments().documents.compactMap { ticket in
             try? ticket.data(as: Ticket.self)
         }
-        return tickets
     }
     
-    static func fetchTicket(with ticketId: String) async throws -> Ticket? {
-        do {
-            return try await Firestore.firestore().collection("tickets").document(ticketId).getDocument(as: Ticket.self)
-        } catch {
-            print("Error to fetch ticket with error: \(error)")
-            return nil
-        }
-        
+    func fetchTicket(with ticketId: String) async throws -> Ticket? {
+        try await ticketDocument(ticketId: ticketId).getDocument(as: Ticket.self)
     }
     
-    static func uploadTicket(_ ticket: Ticket) {
+    func saveData(_ ticket: Ticket) {
         // encode the ticket
         guard let ticketData = try? Firestore.Encoder().encode(ticket) else { return }
         
         // create or get the collection of "ticket"
         // upload the document
-        Firestore.firestore()
-            .collection("tickets")
-            .addDocument(data: ticketData) { error in
+        ticketCollection.addDocument(data: ticketData) { error in
                 // handle error
                 if let error = error {
                     print("DEBUG: Error upload ticket with error: \(error.localizedDescription)")
@@ -45,7 +44,7 @@ struct TicketService {
             }
     }
     
-    static func updateData(ticketId: String, _ fields: [AnyHashable : Any]) async throws {
-        try await Firestore.firestore().collection("tickets").document(ticketId).updateData(fields)
+    func updateData(ticketId: String, _ fields: [AnyHashable : Any]) async throws {
+        try await ticketDocument(ticketId: ticketId).updateData(fields)
     }
 }
