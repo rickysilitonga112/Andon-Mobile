@@ -10,36 +10,72 @@ import SwiftUI
 import Firebase
 import FirebaseFirestoreSwift
 
-struct Ticket: Identifiable, Hashable, Codable {
-    @DocumentID var ticketId: String?
-    let machineType: MachineType
-    let machineName: String
-    let problem: String
-    var ticketStatus: TicketStatus
-    let createdByUserId: String
-    let createdAt: Timestamp
-    var closedAt: Timestamp?
-    var respondByUserId: String?
-    var actions: String?
-    var closedBy: String?
-    
+struct TicketEntity: Codable {
+    @DocumentID var documentId: String?
+    let data: Ticket?
     var id: String {
-        return ticketId ?? NSUUID().uuidString
+        return documentId ?? NSUUID().uuidString
     }
 }
 
-enum TicketStatus: Codable {
-    case open
-    case ongoing
-    case closed
+struct Ticket: Codable {
+    let machineType: String
+    let machineName: String
+    let problem: String
+    var ticketStatus: String
+    let createdBy: String
+    let createdAt: Timestamp
+    let closedAt: Timestamp?
+    let respondBy: String?
+    let actions: String?
+    let closedBy: String?
     
-    var title: String {
-        switch self {
-        case .open: "Open"
-        case .ongoing: "Ongoing"
-        case .closed: "Closed"
-        }
+    enum CodingKeys: String, CodingKey {
+        case machineType = "machine_type"
+        case machineName = "machine_name"
+        case problem
+        case ticketStatus = "ticket_status"
+        case createdBy = "created_by"
+        case createdAt = "created_at"
+        case closedAt = "closed_at"
+        case respondBy = "respond_by"
+        case actions
+        case closedBy = "closed_by"
     }
+    
+    func encode(to encoder: any Encoder) throws {
+        var container = encoder.container(keyedBy: CodingKeys.self)
+        try container.encode(self.machineType, forKey: .machineType)
+        try container.encode(self.machineName, forKey: .machineName)
+        try container.encode(self.problem, forKey: .problem)
+        try container.encode(self.ticketStatus, forKey: .ticketStatus)
+        try container.encode(self.createdBy, forKey: .createdBy)
+        try container.encode(self.createdAt, forKey: .createdAt)
+        try container.encodeIfPresent(self.closedAt, forKey: .closedAt)
+        try container.encodeIfPresent(self.respondBy, forKey: .respondBy)
+        try container.encodeIfPresent(self.actions, forKey: .actions)
+        try container.encodeIfPresent(self.closedBy, forKey: .closedBy)
+    }
+    
+    init(from decoder: any Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        self.machineType = try container.decode(String.self, forKey: .machineType)
+        self.machineName = try container.decode(String.self, forKey: .machineName)
+        self.problem = try container.decode(String.self, forKey: .problem)
+        self.ticketStatus = try container.decode(String.self, forKey: .ticketStatus)
+        self.createdBy = try container.decode(String.self, forKey: .createdBy)
+        self.createdAt = try container.decode(Timestamp.self, forKey: .createdAt)
+        self.closedAt = try container.decodeIfPresent(Timestamp.self, forKey: .closedAt)
+        self.respondBy = try container.decodeIfPresent(String.self, forKey: .respondBy)
+        self.actions = try container.decodeIfPresent(String.self, forKey: .actions)
+        self.closedBy = try container.decodeIfPresent(String.self, forKey: .closedBy)
+    }
+}
+
+enum TicketStatus:String, Codable {
+    case open = "Open"
+    case ongoing = "Ongoing"
+    case closed = "Closed"
     
     var statusColor: Color {
         switch self {
@@ -53,19 +89,9 @@ enum TicketStatus: Codable {
     }
 }
 
-enum MachineType: CaseIterable, Codable {
-    case automation, tester, tooling, other
-    
-    var title: String {
-        switch self {
-        case .automation:
-            return "Automation"
-        case .tester:
-            return "End Tester"
-        case .tooling:
-            return "Production Tooling"
-        case .other:
-            return "Other"
-        }
-    }
+enum MachineType: String, CaseIterable, Codable {
+    case automation = "Automation"
+    case tester = "Tester"
+    case tooling = "Tooling"
+    case other = "Other"
 }
