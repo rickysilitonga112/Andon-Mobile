@@ -24,23 +24,23 @@ struct MainTabbarView: View {
                     selectedTab = 0
                 }
             
-            TicketHistory()
-                .tabItem {
-                    Label("History", systemImage: selectedTab == 0 ? "list.clipboard.fill" : "list.clipboard")
-                }
-                .tag(1)
-                .onAppear {
-                    selectedTab = 1
-                }
-            
-            ChatView()
-                .tabItem {
-                    Label("Chat", systemImage: selectedTab == 2 ? "message.badge.fill" : "message.badge")
-                }
-                .tag(2)
-                .onAppear {
-                    selectedTab = 2
-                }
+//            TicketHistory()
+//                .tabItem {
+//                    Label("History", systemImage: selectedTab == 0 ? "list.clipboard.fill" : "list.clipboard")
+//                }
+//                .tag(1)
+//                .onAppear {
+//                    selectedTab = 1
+//                }
+//            
+//            ChatView()
+//                .tabItem {
+//                    Label("Chat", systemImage: selectedTab == 2 ? "message.badge.fill" : "message.badge")
+//                }
+//                .tag(2)
+//                .onAppear {
+//                    selectedTab = 2
+//                }
             
             ProfileView()
                 .tabItem {
