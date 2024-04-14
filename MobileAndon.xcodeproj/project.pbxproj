@@ -7,7 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5651E61A2BBBE40600A6C8F9 /* NetworkingError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5651E6192BBBE40600A6C8F9 /* NetworkingError.swift */; };
+		5651E61A2BBBE40600A6C8F9 /* FirebaseNetworkingError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5651E6192BBBE40600A6C8F9 /* FirebaseNetworkingError.swift */; };
+		5651E64D2BBC329C00A6C8F9 /* DeveloperPreview+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5651E64C2BBC329C00A6C8F9 /* DeveloperPreview+Ext.swift */; };
 		5656CED12B8B4D14003E0A57 /* MobileAndonApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5656CED02B8B4D14003E0A57 /* MobileAndonApp.swift */; };
 		5656CED32B8B4D14003E0A57 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5656CED22B8B4D14003E0A57 /* ContentView.swift */; };
 		5656CED52B8B4D15003E0A57 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5656CED42B8B4D15003E0A57 /* Assets.xcassets */; };
@@ -39,6 +40,7 @@
 		569E15672BA469E400F54A14 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 569E15662BA469E400F54A14 /* FirebaseAnalytics */; };
 		56ABC6DE2B9063A2006F99F2 /* TicketDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56ABC6DD2B9063A2006F99F2 /* TicketDetailCell.swift */; };
 		56AEE08B2B91DA9C00467886 /* AMSecondaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56AEE08A2B91DA9C00467886 /* AMSecondaryButton.swift */; };
+		56D91EBD2BBD606A00284834 /* Query+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D91EBC2BBD606A00284834 /* Query+Ext.swift */; };
 		56DA75E02B945899004FB947 /* TicketDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56DA75DF2B945899004FB947 /* TicketDetailViewModel.swift */; };
 		56DA75E22B95A507004FB947 /* TicketService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56DA75E12B95A507004FB947 /* TicketService.swift */; };
 		56DA75E42B95C4E9004FB947 /* Timestamp+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56DA75E32B95C4E9004FB947 /* Timestamp+Ext.swift */; };
@@ -54,7 +56,8 @@
 
 /* Begin PBXFileReference section */
 		29D78E7C3CC20E5A4792397B /* Pods-MobileAndon.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MobileAndon.debug.xcconfig"; path = "Target Support Files/Pods-MobileAndon/Pods-MobileAndon.debug.xcconfig"; sourceTree = "<group>"; };
-		5651E6192BBBE40600A6C8F9 /* NetworkingError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingError.swift; sourceTree = "<group>"; };
+		5651E6192BBBE40600A6C8F9 /* FirebaseNetworkingError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseNetworkingError.swift; sourceTree = "<group>"; };
+		5651E64C2BBC329C00A6C8F9 /* DeveloperPreview+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DeveloperPreview+Ext.swift"; sourceTree = "<group>"; };
 		5656CECD2B8B4D14003E0A57 /* MobileAndon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MobileAndon.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5656CED02B8B4D14003E0A57 /* MobileAndonApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MobileAndonApp.swift; sourceTree = "<group>"; };
 		5656CED22B8B4D14003E0A57 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -83,6 +86,7 @@
 		569E15642BA469CD00F54A14 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		56ABC6DD2B9063A2006F99F2 /* TicketDetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketDetailCell.swift; sourceTree = "<group>"; };
 		56AEE08A2B91DA9C00467886 /* AMSecondaryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AMSecondaryButton.swift; sourceTree = "<group>"; };
+		56D91EBC2BBD606A00284834 /* Query+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Query+Ext.swift"; sourceTree = "<group>"; };
 		56DA75DF2B945899004FB947 /* TicketDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketDetailViewModel.swift; sourceTree = "<group>"; };
 		56DA75E12B95A507004FB947 /* TicketService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketService.swift; sourceTree = "<group>"; };
 		56DA75E32B95C4E9004FB947 /* Timestamp+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Timestamp+Ext.swift"; sourceTree = "<group>"; };
@@ -137,7 +141,6 @@
 				5656CEDE2B8B4D24003E0A57 /* App */,
 				56FE4A8B2B96FF7E004B144B /* Constants */,
 				5656CEDF2B8B4D30003E0A57 /* Core */,
-				5656CEE02B8B4D36003E0A57 /* Extension */,
 				5656CEE12B8B4D3E003E0A57 /* Model */,
 				5656CEE22B8B4D46003E0A57 /* Services */,
 				5656CEE32B8B4D4F003E0A57 /* Utilities */,
@@ -171,6 +174,7 @@
 				5656CEE62B8B4DAE003E0A57 /* Authentication */,
 				5656CEF12B8B4EDD003E0A57 /* Components */,
 				5656CF152B8B611F003E0A57 /* Chat */,
+				5656CEE02B8B4D36003E0A57 /* Extension */,
 				5656CF0B2B8B5F6C003E0A57 /* Home */,
 				5656CF162B8B6125003E0A57 /* Profile */,
 				5656CEE52B8B4DA9003E0A57 /* Root */,
@@ -185,6 +189,8 @@
 			isa = PBXGroup;
 			children = (
 				56DA75E32B95C4E9004FB947 /* Timestamp+Ext.swift */,
+				5651E64C2BBC329C00A6C8F9 /* DeveloperPreview+Ext.swift */,
+				56D91EBC2BBD606A00284834 /* Query+Ext.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -451,7 +457,7 @@
 			isa = PBXGroup;
 			children = (
 				56FE4A8C2B96FF91004B144B /* ProfileImageSize.swift */,
-				5651E6192BBBE40600A6C8F9 /* NetworkingError.swift */,
+				5651E6192BBBE40600A6C8F9 /* FirebaseNetworkingError.swift */,
 			);
 			path = Constants;
 			sourceTree = "<group>";
@@ -598,6 +604,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5656CF422B8DF31D003E0A57 /* HomeViewModel.swift in Sources */,
+				56D91EBD2BBD606A00284834 /* Query+Ext.swift in Sources */,
 				56FE4A8D2B96FF91004B144B /* ProfileImageSize.swift in Sources */,
 				56DA75E02B945899004FB947 /* TicketDetailViewModel.swift in Sources */,
 				5656CF1A2B8B6138003E0A57 /* ProfileView.swift in Sources */,
@@ -610,6 +617,7 @@
 				5656CF0F2B8B6036003E0A57 /* HomeView.swift in Sources */,
 				5656CF1E2B8B616C003E0A57 /* ChatView.swift in Sources */,
 				5656CED12B8B4D14003E0A57 /* MobileAndonApp.swift in Sources */,
+				5651E64D2BBC329C00A6C8F9 /* DeveloperPreview+Ext.swift in Sources */,
 				56FE4A862B96CDA7004B144B /* ProfileViewModel.swift in Sources */,
 				56E509552B8F3F7000845095 /* AddTicketViewModel.swift in Sources */,
 				56AEE08B2B91DA9C00467886 /* AMSecondaryButton.swift in Sources */,
@@ -621,7 +629,7 @@
 				56E509532B8F3F6700845095 /* AddTicketView.swift in Sources */,
 				56ABC6DE2B9063A2006F99F2 /* TicketDetailCell.swift in Sources */,
 				5656CEEE2B8B4E6F003E0A57 /* ContentViewModel.swift in Sources */,
-				5651E61A2BBBE40600A6C8F9 /* NetworkingError.swift in Sources */,
+				5651E61A2BBBE40600A6C8F9 /* FirebaseNetworkingError.swift in Sources */,
 				5656CF2C2B8BC0EB003E0A57 /* AuthHeaderView.swift in Sources */,
 				5656CF462B8DF981003E0A57 /* Ticket.swift in Sources */,
 				5656CF402B8D9D00003E0A57 /* UserService.swift in Sources */,

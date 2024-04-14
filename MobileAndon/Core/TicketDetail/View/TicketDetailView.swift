@@ -21,60 +21,56 @@ struct TicketDetailView: View {
     
     @State private var showRespondAlert = false
     
-    var ticket: Ticket? {
-        return viewModel.ticket
-    }
-    
     var body: some View {
         ZStack {
-            if let ticket = ticket {
+            if let ticket = viewModel.ticket {
                 List {
                     Section {
                         TicketDetailCell(title: "Project", value: ticket.machineName)
-                        TicketDetailCell(title: "Machine Type", value: ticket.machineType.title)
-                        TicketDetailCell(title: "Request By", value: ticket.createdByUserId)
-                        TicketDetailCell(title: "Created At", value: "14.20")
-                        if let closedAt = ticket.closedAt {
-                            // TODO: - change to the actual time
-                            TicketDetailCell(title: "Closed at", value: "14.00")
-                        }
+//                        TicketDetailCell(title: "Machine Type", value: ticket.machineType.title)
+//                        TicketDetailCell(title: "Request By", value: ticket.createdByUserId)
+//                        TicketDetailCell(title: "Created At", value: "14.20")
+//                        if let closedAt = ticket.closedAt {
+//                            // TODO: - change to the actual time
+//                            TicketDetailCell(title: "Closed at", value: "14.00")
+//                        }
                     }
-                    Section("Status") {
-                        TicketDetailCell(title: "Status", value: ticket.ticketStatus.title, indicatorColor: ticket.ticketStatus.statusColor)
-                        if let closedBy = ticket.closedBy {
-                            TicketDetailCell(title: "Done by", value: closedBy)
-                        } else {
-                            if let respondByUserId = ticket.respondByUserId {
-                                TicketDetailCell(title:"WIP by" , value: respondByUserId)
-                            }
-                        }
-                        TicketDetailCell(title: "Total Downtime", value: "\(totalDowntime) Mins")
-                    }
-                    Section("Problem") {
-                        Text("\(ticket.problem)")
-                    }
-                    if let actions = ticket.actions {
-                        Section("Actions") {
-                            Text("\(actions)")
-                        }
-                    }
-                    if ticket.closedBy == nil {
-                        Button {
-                            if ticket.respondByUserId != nil {
-                                
-                            } else {
-                                self.showRespondAlert.toggle()
-                            }
-                        } label: {
-                            HStack {
-                                Spacer()
-                                Text(ticket.respondByUserId == nil ? "Respond Ticket": "Close Ticket")
-                                    .foregroundStyle(ticket.ticketStatus.statusColor)
-                                    .font(.headline)
-                                Spacer()
-                            }
-                        }
-                    }
+//                    Section("Status") {
+//                        TicketDetailCell(title: "Status", value: ticket.ticketStatus.title, indicatorColor: ticket.ticketStatus.statusColor)
+//                        if let closedBy = ticket.closedBy {
+//                            TicketDetailCell(title: "Done by", value: closedBy)
+//                        } else {
+//                            if let respondByUserId = ticket.respondByUserId {
+//                                TicketDetailCell(title:"WIP by" , value: respondByUserId)
+//                            }
+//                        }
+//                        TicketDetailCell(title: "Total Downtime", value: "\(totalDowntime) Mins")
+//                    }
+//                    Section("Problem") {
+//                        Text("\(ticket.problem)")
+//                    }
+//                    if let actions = ticket.actions {
+//                        Section("Actions") {
+//                            Text("\(actions)")
+//                        }
+//                    }
+//                    if ticket.closedBy == nil {
+//                        Button {
+//                            if ticket.respondByUserId != nil {
+//                                
+//                            } else {
+//                                self.showRespondAlert.toggle()
+//                            }
+//                        } label: {
+//                            HStack {
+//                                Spacer()
+//                                Text(ticket.respondByUserId == nil ? "Respond Ticket": "Close Ticket")
+//                                    .foregroundStyle(ticket.ticketStatus.statusColor)
+//                                    .font(.headline)
+//                                Spacer()
+//                            }
+//                        }
+//                    }
                 }
                 .navigationTitle("Ticket Detail")
                 .navigationBarTitleDisplayMode(.automatic)
@@ -100,15 +96,5 @@ struct TicketDetailView: View {
 }
 
 #Preview {
-    TicketDetailView(ticketId: "FZt07Z3EJTS7ct9Mvots")
+    TicketDetailView(ticketId: "")
 }
-
-//#Preview {
-//    TicketDetailView(ticket: Ticket(ticketId: "271817981273812738", machineType: .automation, machineName: "Bulb Press", problem: "Bulb press not stop running", ticketStatus: .ongoing, createdByUserId: "Tomas", createdAt: Timestamp(), closedAt: nil, respondByUserId: "Toto", actions: nil, closedBy: nil))
-//}
-
-//#Preview {
-//    TicketDetailView(ticket: Ticket(ticketId: "271817981273812738", machineType: .automation, machineName: "Bulb Press", problem: "Bulb press cylinder not running", ticketStatus: .closed, createdByUserId: "Tomas", createdAt: Timestamp(), closedAt: Timestamp(), respondByUserId: "Toto", actions: "Change bulb cylinder", closedBy: "Toto"))
-//}
-//
-

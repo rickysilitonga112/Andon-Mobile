@@ -51,7 +51,12 @@ struct ProfileView: View {
                     
                     Section {
                         Button {
-                            viewModel.signOut()
+                            do {
+                                try viewModel.signOut()
+                            } catch {
+                                fatalError(error.localizedDescription)
+                            }
+                            
                         } label: {
                             
                             HStack {

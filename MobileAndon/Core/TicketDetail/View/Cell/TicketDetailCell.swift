@@ -10,7 +10,6 @@ import SwiftUI
 struct TicketDetailCell: View {
     let title: String
     let value: String
-    var indicatorColor: Color?
     
     var body: some View {
         HStack(spacing: 16) {
@@ -21,11 +20,11 @@ struct TicketDetailCell: View {
             HStack {
                 
                 // if indicator is not nil
-                if let indicatorColor = indicatorColor {
-                    Circle()
-                        .frame(width: 10, height: 10)
-                        .foregroundStyle(indicatorColor)
-                }
+//                if let indicatorColor = indicatorColor {
+//                    Circle()
+//                        .frame(width: 10, height: 10)
+//                        .foregroundStyle(indicatorColor)
+//                }
                 
                 Text(value)
                     .foregroundStyle(Color.gray)
@@ -36,5 +35,5 @@ struct TicketDetailCell: View {
 }
 
 #Preview {
-    TicketDetailCell(title: "Status", value: "Open", indicatorColor: .red)
+    TicketDetailCell(title: "Status", value: "Open")
 }

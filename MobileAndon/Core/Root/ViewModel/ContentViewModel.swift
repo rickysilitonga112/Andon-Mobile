@@ -9,6 +9,7 @@ import Firebase
 import FirebaseAuth
 import Combine
 
+@MainActor
 class ContentViewModel: ObservableObject {
     @Published var userSession: FirebaseAuth.User?
     private var cancellables = Set<AnyCancellable>()
@@ -17,7 +18,7 @@ class ContentViewModel: ObservableObject {
         setupSubsribers()
     }
     
-    private func setupSubsribers() {
+     private func setupSubsribers() {
         AuthService.shared.$userSession.sink { [weak self] userSession in
             self?.userSession = userSession
         }.store(in: &cancellables)

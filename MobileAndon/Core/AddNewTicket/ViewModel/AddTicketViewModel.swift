@@ -7,36 +7,27 @@
 
 import Firebase
 
+@MainActor
 class AddTicketViewModel: ObservableObject {
-    @Published var machinetype: MachineType = .other
+    @Published var machinetype: String = ""
     @Published var machineName: String = ""
     @Published var problem: String = ""
     
     
-    func createNewTicket(user: User) -> Ticket {
-        
-        return Ticket(machineType: self.machinetype,
-                      machineName: self.machineName,
-                      problem: self.problem,
-                      ticketStatus: .open,
-                      createdByUserId: user.id,
-                      createdAt: Timestamp()
+    func createTicket(uid: String) -> Ticket {
+        Ticket(machineType: self.machinetype,
+               machineName: self.machineName,
+               problem: self.problem,
+               ticketStatus: "Open",
+               createdBy: uid,
+               createdAt: Timestamp()
         )
     }
     
-    func uploadTicket() {
+    func uploadTicket() throws {
         // get the user uid
         guard let uid = Auth.auth().currentUser?.uid else { return }
-        
-        let ticket = Ticket(
-            machineType: self.machinetype,
-            machineName: self.machineName,
-            problem: self.problem,
-            ticketStatus: .open,
-            createdByUserId: uid,
-            createdAt: Timestamp()
-        )
-        
-        TicketService.uploadTicket(ticket)
+        let ticket = createTicket(uid: uid)
+        try TicketService.shared.uploadTicket(ticket)
     }
 }

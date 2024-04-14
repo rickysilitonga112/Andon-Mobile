@@ -26,7 +26,7 @@ class HomeViewModel: ObservableObject {
                 return
             }
             
-            let tickets = documents.compactMap{ queryDocumentSnapshot in
+            let ticketList = documents.compactMap{ queryDocumentSnapshot in
                 do {
                     let ticket = try queryDocumentSnapshot.data(as: Ticket.self)
                     return ticket
@@ -37,7 +37,7 @@ class HomeViewModel: ObservableObject {
             }
             // sort the ticket
 //            tickets.sort { $0.createdAt > $1.createdAt }
-            self.tickets = tickets.sorted { $0.createdAt > $1.createdAt }
+            self.tickets = ticketList.sorted { $0.createdAt > $1.createdAt }
         }
     }
 }

@@ -21,8 +21,8 @@ struct TicketService {
     
     // MARK: Services
     func fetchTickets() async throws -> [Ticket] {
-        try await ticketCollection.getDocuments().documents.compactMap { ticket in
-            try? ticket.data(as: Ticket.self)
+        try await ticketCollection.getDocuments().documents.compactMap { entity in
+            try? entity.data(as: Ticket.self)
         }
     }
     
@@ -30,21 +30,16 @@ struct TicketService {
         try await ticketDocument(ticketId: ticketId).getDocument(as: Ticket.self)
     }
     
-    func saveData(_ ticket: Ticket) {
-        // encode the ticket
-        guard let ticketData = try? Firestore.Encoder().encode(ticket) else { return }
-        
-        // create or get the collection of "ticket"
-        // upload the document
-        ticketCollection.addDocument(data: ticketData) { error in
-                // handle error
-                if let error = error {
-                    print("DEBUG: Error upload ticket with error: \(error.localizedDescription)")
-                }
-            }
+    func uploadTicket(_ ticket: Ticket) throws {
+        try ticketDocument(ticketId: ticket.id)
+            .setData(from: ticket, merge: false)
     }
     
     func updateData(ticketId: String, _ fields: [AnyHashable : Any]) async throws {
         try await ticketDocument(ticketId: ticketId).updateData(fields)
+    }
+    
+    func getAllTicketCount() async throws -> Int {
+        try await ticketCollection.aggregateCount()
     }
 }

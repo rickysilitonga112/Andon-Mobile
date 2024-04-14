@@ -18,14 +18,14 @@ struct AddTicketView: View {
     
     var body: some View {
         Form {
-            Section("Select Machine Type") {
-                Picker("Machine Type", selection: $viewModel.machinetype) {
-                    ForEach(MachineType.allCases, id: \.self) {
-                        Text($0.title)
-                    }
-                }
-                .pickerStyle(.automatic)
-            }
+//            Section("Select Machine Type") {
+//                Picker("Machine Type", selection: $viewModel.machinetype) {
+//                    ForEach(MachineType.allCases, id: \.self) {
+//                        Text($0.title)
+//                    }
+//                }
+//                .pickerStyle(.automatic)
+//            }
             
             Section("Machine Name") {
                 TextField("Input machine name", text: $viewModel.machineName)
@@ -52,8 +52,13 @@ struct AddTicketView: View {
             ToolbarItem(placement: .navigationBarTrailing) {
                 Button {
                     // upload new ticket to firestore
-                    self.viewModel.uploadTicket()
-                    presentationMode.wrappedValue.dismiss()
+                    do {
+                        try viewModel.uploadTicket()
+                        presentationMode.wrappedValue.dismiss()
+                    } catch {
+                        fatalError("DEBUG: Failed to uplaod ticket with error: \(error.localizedDescription)")
+                    }
+                   
                 } label: {
                     Text("Add")
                         .font(.subheadline)

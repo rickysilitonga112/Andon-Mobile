@@ -18,7 +18,7 @@ struct TicketCell: View {
 
             HStack(spacing: 12) {
                 VStack(alignment: .leading) {
-                    Text(ticket.machineType.title)
+                    Text(ticket.machineType)
                         .font(.footnote)
                         .foregroundColor(.secondary)
                     
@@ -45,9 +45,9 @@ struct TicketCell: View {
                     HStack {
                         Circle()
                             .frame(width: 10, height: 10)
-                            .foregroundStyle(ticket.ticketStatus.statusColor)
+                            .foregroundStyle(getStatusColor(status: ticket.ticketStatus))
                         
-                        Text(ticket.ticketStatus.title)
+                        Text(ticket.ticketStatus)
                             .font(.footnote)
                             .foregroundColor(.secondary)
                             
@@ -58,14 +58,21 @@ struct TicketCell: View {
             .padding(12)
         }
         .frame(height: 100)
-
+    }
+    
+    private func getStatusColor(status: String) -> Color {
+        switch status {
+        case "On Progress": return .orange
+        case "Closed": return .green
+        default: return .red
+        }
     }
 }
 
 #Preview {
     Color(uiColor: .systemGray6)
         .overlay {
-            TicketCell(ticket: Ticket(machineType: .tester, machineName: "Red Led Tester", problem: "Pneumatic preasure is low", ticketStatus: .open, createdByUserId: "Ricky", createdAt: Timestamp()))
+            TicketCell(ticket: DeveloperPreview.shared.ticketOpen)
         }
         .ignoresSafeArea(.all)
 }

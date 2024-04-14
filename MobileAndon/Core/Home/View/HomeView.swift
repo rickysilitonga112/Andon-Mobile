@@ -78,11 +78,11 @@ struct HomeView: View {
                     }
                 }
             }
-            .onAppear {
-                Task {
-                    try await TicketService.fetchTickets()
-                }
-            }
+//            .onAppear {
+//                Task {
+//                    let data = try await TicketService.shared.fetchTickets()
+//                }
+//            }
             .navigationDestination(for: Ticket.self) { ticket in
                 TicketDetailView(ticketId: ticket.id)
             }

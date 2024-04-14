@@ -10,15 +10,8 @@ import SwiftUI
 import Firebase
 import FirebaseFirestoreSwift
 
-struct TicketEntity: Codable {
+struct Ticket: Codable, Hashable {
     @DocumentID var documentId: String?
-    let data: Ticket?
-    var id: String {
-        return documentId ?? NSUUID().uuidString
-    }
-}
-
-struct Ticket: Codable {
     let machineType: String
     let machineName: String
     let problem: String
@@ -29,6 +22,34 @@ struct Ticket: Codable {
     let respondBy: String?
     let actions: String?
     let closedBy: String?
+
+    var id: String {
+        documentId ?? NSUUID().uuidString
+    }
+    
+    init(machineType: String,
+         machineName: String,
+         problem: String,
+         ticketStatus: String,
+         createdBy: String,
+         createdAt: Timestamp,
+         closedAt: Timestamp? = nil,
+         respondBy: String? = nil,
+         actions: String? = nil,
+         closedBy: String? = nil
+    ) {
+        self.machineType = machineType
+        self.machineName = machineName
+        self.problem = problem
+        self.ticketStatus = ticketStatus
+        self.createdBy = createdBy
+        self.createdAt = createdAt
+        self.closedAt = closedAt
+        self.respondBy = respondBy
+        self.actions = actions
+        self.closedBy = closedBy
+    }
+    
     
     enum CodingKeys: String, CodingKey {
         case machineType = "machine_type"
