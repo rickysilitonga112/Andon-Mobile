@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5621995C2BCD41C700881338 /* AMServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5621995B2BCD41C700881338 /* AMServer.swift */; };
+		5621995E2BCD478300881338 /* EmptyServerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5621995D2BCD478300881338 /* EmptyServerView.swift */; };
 		5651E61A2BBBE40600A6C8F9 /* FirebaseNetworkingError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5651E6192BBBE40600A6C8F9 /* FirebaseNetworkingError.swift */; };
 		5651E64D2BBC329C00A6C8F9 /* DeveloperPreview+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5651E64C2BBC329C00A6C8F9 /* DeveloperPreview+Ext.swift */; };
 		5656CED12B8B4D14003E0A57 /* MobileAndonApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5656CED02B8B4D14003E0A57 /* MobileAndonApp.swift */; };
@@ -54,6 +56,8 @@
 
 /* Begin PBXFileReference section */
 		29D78E7C3CC20E5A4792397B /* Pods-MobileAndon.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MobileAndon.debug.xcconfig"; path = "Target Support Files/Pods-MobileAndon/Pods-MobileAndon.debug.xcconfig"; sourceTree = "<group>"; };
+		5621995B2BCD41C700881338 /* AMServer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AMServer.swift; sourceTree = "<group>"; };
+		5621995D2BCD478300881338 /* EmptyServerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyServerView.swift; sourceTree = "<group>"; };
 		5651E6192BBBE40600A6C8F9 /* FirebaseNetworkingError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseNetworkingError.swift; sourceTree = "<group>"; };
 		5651E64C2BBC329C00A6C8F9 /* DeveloperPreview+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DeveloperPreview+Ext.swift"; sourceTree = "<group>"; };
 		5656CECD2B8B4D14003E0A57 /* MobileAndon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MobileAndon.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -139,7 +143,6 @@
 				5656CEE12B8B4D3E003E0A57 /* Models */,
 				56C326FE2BCC06A4009AC3E0 /* Views */,
 				56C326FC2BCC051B009AC3E0 /* ViewModels */,
-				5656CEE22B8B4D46003E0A57 /* Services */,
 				56C327002BCC0819009AC3E0 /* Shared */,
 				56FE4A8B2B96FF7E004B144B /* Constants */,
 				56C326FD2BCC0624009AC3E0 /* Resources */,
@@ -177,8 +180,9 @@
 		5656CEE12B8B4D3E003E0A57 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				5656CF1F2B8BBEF1003E0A57 /* User.swift */,
+				5621995B2BCD41C700881338 /* AMServer.swift */,
 				5656CF452B8DF981003E0A57 /* Ticket.swift */,
+				5656CF1F2B8BBEF1003E0A57 /* User.swift */,
 				56FE4A8E2B97022D004B144B /* ProfileListOption.swift */,
 			);
 			path = Models;
@@ -221,6 +225,7 @@
 				5656CF0E2B8B6036003E0A57 /* HomeView.swift */,
 				5656CF432B8DF3C8003E0A57 /* TicketStatisticContainer.swift */,
 				5656CF472B8DFE20003E0A57 /* TicketCell.swift */,
+				5621995D2BCD478300881338 /* EmptyServerView.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -254,9 +259,9 @@
 				5656CEE62B8B4DAE003E0A57 /* Authentication */,
 				56C326FF2BCC0770009AC3E0 /* Tickets */,
 				5656CF0B2B8B5F6C003E0A57 /* Home */,
-				5656CF192B8B6138003E0A57 /* ProfileView.swift */,
 				5656CED22B8B4D14003E0A57 /* ContentView.swift */,
 				5656CEEF2B8B4E96003E0A57 /* MainTabbarView.swift */,
+				5656CF192B8B6138003E0A57 /* ProfileView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -275,6 +280,7 @@
 			isa = PBXGroup;
 			children = (
 				5656CEE02B8B4D36003E0A57 /* Extension */,
+				5656CEE22B8B4D46003E0A57 /* Services */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -433,6 +439,7 @@
 				56D91EBD2BBD606A00284834 /* Query+Ext.swift in Sources */,
 				56FE4A8D2B96FF91004B144B /* ProfileImageSize.swift in Sources */,
 				56DA75E02B945899004FB947 /* TicketDetailViewModel.swift in Sources */,
+				5621995E2BCD478300881338 /* EmptyServerView.swift in Sources */,
 				5656CF1A2B8B6138003E0A57 /* ProfileView.swift in Sources */,
 				5656CF362B8C8F67003E0A57 /* AMTextField.swift in Sources */,
 				56DA75E22B95A507004FB947 /* TicketService.swift in Sources */,
@@ -463,6 +470,7 @@
 				5656CF3A2B8C946E003E0A57 /* AMPrimaryButton.swift in Sources */,
 				56FE4A882B96D588004B144B /* AMCircularProfileImage.swift in Sources */,
 				5656CEF02B8B4E96003E0A57 /* MainTabbarView.swift in Sources */,
+				5621995C2BCD41C700881338 /* AMServer.swift in Sources */,
 				56FE4A8F2B97022D004B144B /* ProfileListOption.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

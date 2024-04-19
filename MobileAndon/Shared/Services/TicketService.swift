@@ -35,6 +35,10 @@ struct TicketService {
             .setData(from: ticket, merge: false)
     }
     
+    func updateTicketId(id: String) {
+        let documentId = ticketDocument(ticketId: id).documentID
+    }
+    
     func updateData(ticketId: String, _ fields: [AnyHashable : Any]) async throws {
         try await ticketDocument(ticketId: ticketId).updateData(fields)
     }

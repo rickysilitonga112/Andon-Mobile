@@ -39,15 +39,12 @@ class AuthService {
     ///   - fullName: full name to register
     ///   - password: password to register
     func signUp(with email: String, fullName: String, phoneNumber: String, password: String) async throws {
-        do {
-            let result = try await Auth.auth().createUser(withEmail: email, password: password)
-            let user = User(id: result.user.uid, email: email, fullName: fullName, phoneNumber: phoneNumber)
-            self.userSession = result.user
-            
-            try await uploadUserData(user)
-        } catch {
-            print("DEBUG: Failed to create user with error: \(error.localizedDescription)")
-        }
+        let result = try await Auth.auth().createUser(withEmail: email, password: password)
+        self.userSession = result.user
+        let user = User(id: result.user.uid, email: email, fullName: fullName, phoneNumber: phoneNumber)
+        try await uploadUserData(user)
+        
+        //  print("DEBUG: Failed to create user with error: \(error.localizedDescription)")
     }
     
     /// Function that handle sign out in firebase authentication

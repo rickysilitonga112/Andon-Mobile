@@ -31,5 +31,4 @@ class ProfileViewModel: ObservableObject {
             }
         }.store(in: &cancellables)
     }
-    
 }

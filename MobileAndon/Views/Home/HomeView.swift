@@ -12,6 +12,18 @@ struct HomeView: View {
     @State var presentAddNewTicket = false
     
     var body: some View {
+        if let user = viewModel.currentUser {
+            if user.serverId == nil {
+                EmptyServerView(role: Role(rawValue: user.role ?? "None")!)
+            } else {
+               homeBody
+            }
+        } else {
+            Text("User nil")
+        }
+    }
+    
+    var homeBody: some View {
         NavigationStack {
             ZStack {
                 Color(uiColor: UIColor.secondarySystemBackground)
@@ -78,11 +90,6 @@ struct HomeView: View {
                     }
                 }
             }
-//            .onAppear {
-//                Task {
-//                    let data = try await TicketService.shared.fetchTickets()
-//                }
-//            }
             .navigationDestination(for: Ticket.self) { ticket in
                 TicketDetailView(ticketId: ticket.id)
             }
@@ -95,6 +102,7 @@ struct HomeView: View {
             }
         }
     }
+    
 }
 
 #Preview {

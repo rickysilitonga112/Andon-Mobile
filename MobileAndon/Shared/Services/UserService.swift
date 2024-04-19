@@ -31,8 +31,13 @@ class UserService {
         guard let uid = Auth.auth().currentUser?.uid else { 
             throw FirebaseNetworkingError.failedUid
         }
-        self.currentUser = try await fetchUser(uid: uid)
-        print("DEBUG: Current user log in is: \(String(describing: currentUser))")
+        do {
+            self.currentUser = try await fetchUser(uid: uid)
+            print("DEBUG: Current user log in is: \(String(describing: currentUser))")
+        } catch {
+            print("DEBUG: Unable to fetch user with id:\(uid)")
+            print("DEBUG: Unable to fetch with error: \(error)")
+        }
     }
     
     
@@ -47,6 +52,6 @@ class UserService {
         guard let userData = try await userDocument(uid: uid).getDocument().data() else {
             throw FirebaseNetworkingError.failedUid
         }
-        return userData["fullName"] as? String
+        return userData[User.CodingKeys.fullName.rawValue] as? String
     }
 }

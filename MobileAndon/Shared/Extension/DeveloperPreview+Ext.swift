@@ -11,11 +11,11 @@ import FirebaseFirestore
 struct DeveloperPreview {
     static let shared = DeveloperPreview()
     
-    let ticketOpen = Ticket(machineType: "Tester", machineName: "Bulb Tester", problem: "Machine not move", ticketStatus: "Open", createdBy: "Test User", createdAt: Timestamp())
+    let ticketOpen = Ticket(id: "", machineType: "Tester", machineName: "Bulb Tester", problem: "Machine not move", ticketStatus: "Open", createdBy: "Test User", createdAt: Timestamp(), serverId: "")
     
-    let tikcetOnprogress = Ticket(machineType: "Tester", machineName: "Bulb Tester", problem: "Machine not move", ticketStatus: "On Progress", createdBy: "Test User", createdAt: Timestamp(), closedAt: nil, respondBy: "Tim Cook", actions: nil, closedBy: nil)
+    let tikcetOnprogress = Ticket(id: "",machineType: "Tester", machineName: "Bulb Tester", problem: "Machine not move", ticketStatus: "On Progress", createdBy: "Test User", createdAt: Timestamp(), serverId: "", closedAt: nil, respondBy: "Tim Cook", actions: nil, closedBy: nil)
     
-    let ticketClose = Ticket(machineType: "Tester", machineName: "Bulb Tester", problem: "Machine Not Move", ticketStatus: "Closed", createdBy: "Test User", createdAt: Timestamp(), closedAt: Timestamp(), respondBy: "Tim Cook", actions: "Change power supply", closedBy: "Tim Cook")
+    let ticketClose = Ticket(id: "", machineType: "Tester", machineName: "Bulb Tester", problem: "Machine Not Move", ticketStatus: "Closed", createdBy: "Test User", createdAt: Timestamp(), serverId: "", closedAt: Timestamp(), respondBy: "Tim Cook", actions: "Change power supply", closedBy: "Tim Cook")
 }
 
 extension PreviewProvider {

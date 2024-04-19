@@ -7,13 +7,18 @@
 
 import Foundation
 import FirebaseFirestore
+import Combine
 
 @MainActor
 class HomeViewModel: ObservableObject {
-    @Published private(set) var tickets = [Ticket]()
+    @Published var tickets = [Ticket]()
+    @Published var currentUser: User?
+    
     private let db = Firestore.firestore()
+    private var cancellables = Set<AnyCancellable>()
  
     init() {
+        setupSubscribers()
         Task {
             try await fetchTickets()
         }
@@ -39,5 +44,15 @@ class HomeViewModel: ObservableObject {
 //            tickets.sort { $0.createdAt > $1.createdAt }
             self.tickets = ticketList.sorted { $0.createdAt > $1.createdAt }
         }
+    }
+    
+    private func setupSubscribers() {
+        print("User service: \(String(describing: UserService.shared.currentUser?.email))")
+        UserService.shared.$currentUser.sink { [weak self] user in
+            self?.currentUser = user
+            if let user = user {
+                print("DEBUG: Current user in Combine: \(user)")
+            }
+        }.store(in: &cancellables)
     }
 }

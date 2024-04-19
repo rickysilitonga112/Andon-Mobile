@@ -27,25 +27,25 @@ struct ProfileView: View {
                         HStack {
                             Text("Email")
                             Spacer()
-                            Text(viewModel.currentUser?.email ?? "email.value")
+                            Text(viewModel.currentUser?.email ?? "Email")
                         }
                         
                         HStack {
                             Text("Full Name")
                             Spacer()
-                            Text(viewModel.currentUser?.fullName ?? "fullName.value")
+                            Text(viewModel.currentUser?.fullName ?? "User Name")
                         }
                         
                         HStack {
                             Text("Phone Number")
                             Spacer()
-                            Text("08xxx")
+                            Text(viewModel.currentUser?.phoneNumber ?? "08xxx")
                         }
                         
                         HStack {
                             Text("Role")
                             Spacer()
-                            Text(viewModel.currentUser?.role.rawValue ?? "role.value")
+                            Text(viewModel.currentUser?.role ?? "None")
                         }
                     }
                     
